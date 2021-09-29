@@ -4,10 +4,15 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity("email")
  */
+
 class User
 {
     /**
@@ -23,7 +28,8 @@ class User
     private $message;
 
     /**
-     * @ORM\Column(type="text", length=255)
+     * @ORM\Column(type="text", length=255, unique=true)
+     * @Assert\Email
      */
     private $email;
 
@@ -61,7 +67,7 @@ class User
         return $this->email;
     }
 
-    public function set($email)
+    public function setEmail($email)
     {
         $this->email = $email;
     }

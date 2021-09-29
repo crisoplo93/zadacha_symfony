@@ -85,6 +85,18 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
+    "friendsofsymfony/jsrouting-bundle": {
+        "version": "2.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.3",
+            "ref": "a9f2e49180f75cdc71ae279a929c4b2e0638de84"
+        },
+        "files": [
+            "./config/routes/fos_js_routing.yaml"
+        ]
+    },
     "laminas/laminas-code": {
         "version": "4.4.3"
     },
@@ -114,6 +126,9 @@
         "files": [
             "./config/packages/sensio_framework_extra.yaml"
         ]
+    },
+    "symfony/asset": {
+        "version": "v5.3.4"
     },
     "symfony/cache": {
         "version": "v5.3.8"
@@ -249,6 +264,9 @@
     "symfony/runtime": {
         "version": "v5.3.4"
     },
+    "symfony/serializer": {
+        "version": "v5.3.8"
+    },
     "symfony/service-contracts": {
         "version": "v2.4.0"
     },
@@ -277,6 +295,19 @@
             "./templates/base.html.twig"
         ]
     },
+    "symfony/validator": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "3eb8df139ec05414489d55b97603c5f6ca0c44cb"
+        },
+        "files": [
+            "./config/packages/test/validator.yaml",
+            "./config/packages/validator.yaml"
+        ]
+    },
     "symfony/var-dumper": {
         "version": "v5.3.8"
     },
@@ -291,5 +322,8 @@
     },
     "twig/twig": {
         "version": "v3.3.3"
+    },
+    "willdurand/jsonp-callback-validator": {
+        "version": "v1.1.0"
     }
 }

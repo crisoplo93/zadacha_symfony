@@ -14,8 +14,9 @@
                 <button class="btn btn-secondary my-2 my-sm-0" type="button" onclick="location.href='admin';" >Вход</button>
             {% elseif user == 'Администратор' and not logged %}
                 <button class="btn btn-secondary my-2 my-sm-0" type="button" onclick="location.href='.';">Назад</button>
-            {% elseif user == 'Администратор' and logged %}
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Выйти</button>
+            {% elseif logged %}
+                <button class="btn btn-info my-2 my-sm-0" type="button" onclick="add_admin()">Новый Администратор</button>
+                <button class="btn btn-secondary my-2 my-sm-0" type="button" onclick="logout()">Выйти</button>
             {% endif %}
             </form>
             </div>

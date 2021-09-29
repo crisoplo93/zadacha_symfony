@@ -10,13 +10,13 @@
         <div class="card-body">
             <h4 class="card-title text-center">Авторизация</h4> 
             <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Логин</label>
-            <input class="form-control" type="text" placeholder="user@example.com" id="inputLarge">
+            <input class="form-control" type="text" id="admin_login">
             <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Пароль</label>
-            <input class="form-control" type="password" id="inputLarge">
+            <input class="form-control" type="password" id="admin_password">
             
             <div style="padding-top:15px" class="container">
                 <div class="col text-center">
-                    <button  class="btn btn-success float-center" type="button">Отправить</button>
+                    <button  class="btn btn-success float-center" type="button" onclick="login()">Войти</button>
                 </div>             
             </div>           
         </div>
@@ -24,10 +24,5 @@
 </div>
 {% endblock %}
 {% block scripts %}
-<script>
-$(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();   
-});
-    
-</script>
+<script src="http://localhost/zadacha_symfony/src/JS/Login.js?0.2"></script>
 {% endblock %}

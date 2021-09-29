@@ -4,11 +4,15 @@ namespace App\Entity;
 
 use App\Repository\AdministratorRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=AdministratorRepository::class)
+ * @UniqueEntity("login")
  */
-class Administrator
+
+ class Administrator
 {
     /**
      * @ORM\Id
@@ -18,7 +22,7 @@ class Administrator
     private $id;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", length=255, unique=true)
      */
     private $login;
 

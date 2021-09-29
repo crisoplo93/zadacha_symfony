@@ -10,30 +10,36 @@
         <div class="card-body">
             <h4 class="card-title text-center">Данные</h4>        
             <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Сообщение</label>
-            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            <textarea class="form-control" id="user_message" rows="3"></textarea>
             <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Электроная почта</label>
-            <input class="form-control" type="text" placeholder="user@example.com" id="inputLarge">
+            <input class="form-control" type="text" placeholder="user@example.com" id="user_email" maxlength="255">
             <div class="row">
                 <div class="col-lg-6">
                     <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Цвет</label>
-                    <select class="form-select" id="exampleSelect1">
-                      <option>Выберите цвет...</option>
+                    <select class="form-select" id="user_color">
+                      <option value="">Выберите цвет...</option>
+                      {% for color in colors %}
+                      <option style="color:{{color.code}};" value="{{color.id}}">{{color.name}}</option>
+                      {% endfor %}
                     </select>
                 </div>
                 <div class="col-lg-6">
                     <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Фигура</label>
-                    <select class="form-select" id="exampleSelect1">
-                      <option>Выберите фигуру...</option>
+                    <select class="form-select" id="user_shape">
+                      <option value="">Выберите фигуру...</option>
+                      {% for shape in shapes %}
+                      <option value="{{shape.id}}">{{shape.name}}</option>
+                      {% endfor %}
                     </select>
                 </div>
             </div>
             <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Изображения <a href="#" data-toggle="tooltip" title="Выберите не более 4 изображений"><i class="fa fa-info-circle"></i></a></label> 
+                <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Изображения <a href="#" data-toggle="tooltip" title="Выберите не более 4 изображений в формате jpg, png"><i class="fa fa-info-circle"></i></a></label> 
             </div>
-            <input class="form-control" type="file" id="inputLarge" multiple></input>
+            <input class="form-control" type="file" id="user_input" multiple></input>
             <div style="padding-top:15px" class="container">
                 <div class="col text-center">
-                    <button  class="btn btn-success float-center" type="button">Отправить</button>
+                    <button  class="btn btn-success float-center" type="button" onclick="sendInfo()">Отправить</button>
                 </div>             
             </div>           
         </div>
@@ -41,12 +47,7 @@
 </div>
 {% endblock %}
 {% block scripts %}
-<script>
-$(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();   
-});
-    
-</script>
+<script src="http://localhost/zadacha_symfony/src/JS/User.js"></script>
 {% endblock %}
    
 
