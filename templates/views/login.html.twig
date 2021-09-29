@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Задача Symfony{% endblock %}
+
+{% block body %}
+{{include('global/navbar.html.twig')}}
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title text-center">Авторизация</h4> 
+            <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Логин</label>
+            <input class="form-control" type="text" placeholder="user@example.com" id="inputLarge">
+            <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Пароль</label>
+            <input class="form-control" type="password" id="inputLarge">
+            
+            <div style="padding-top:15px" class="container">
+                <div class="col text-center">
+                    <button  class="btn btn-success float-center" type="button">Отправить</button>
+                </div>             
+            </div>           
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+    
+</script>
+{% endblock %}

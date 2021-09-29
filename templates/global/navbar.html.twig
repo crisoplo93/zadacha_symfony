@@ -1,0 +1,24 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" >{{user}}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav me-auto">            
+            </ul>
+            <form class="d-flex">
+            {% if user == 'Пользователь'%}
+                <button class="btn btn-secondary my-2 my-sm-0" type="button" onclick="location.href='admin';" >Вход</button>
+            {% elseif user == 'Администратор' and not logged %}
+                <button class="btn btn-secondary my-2 my-sm-0" type="button" onclick="location.href='.';">Назад</button>
+            {% elseif user == 'Администратор' and logged %}
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Выйти</button>
+            {% endif %}
+            </form>
+            </div>
+        </div>
+    </nav>
+</div>

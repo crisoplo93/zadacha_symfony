@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Задача Symfony{% endblock %}
+
+{% block body %}
+{{include('global/navbar.html.twig')}}
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title text-center">Данные</h4>        
+            <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Сообщение</label>
+            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Электроная почта</label>
+            <input class="form-control" type="text" placeholder="user@example.com" id="inputLarge">
+            <div class="row">
+                <div class="col-lg-6">
+                    <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Цвет</label>
+                    <select class="form-select" id="exampleSelect1">
+                      <option>Выберите цвет...</option>
+                    </select>
+                </div>
+                <div class="col-lg-6">
+                    <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Фигура</label>
+                    <select class="form-select" id="exampleSelect1">
+                      <option>Выберите фигуру...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                <label class="col-form-label col-form-label-lg mt-2" for="inputLarge">Изображения <a href="#" data-toggle="tooltip" title="Выберите не более 4 изображений"><i class="fa fa-info-circle"></i></a></label> 
+            </div>
+            <input class="form-control" type="file" id="inputLarge" multiple></input>
+            <div style="padding-top:15px" class="container">
+                <div class="col text-center">
+                    <button  class="btn btn-success float-center" type="button">Отправить</button>
+                </div>             
+            </div>           
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+    
+</script>
+{% endblock %}
+   
+

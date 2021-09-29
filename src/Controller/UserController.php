@@ -13,6 +13,6 @@ class UserController extends AbstractController{
      * @Method({"GET","POST"})
      */
     public function index(){
-        return $this->render('users/index.html.twig');
+        return $this->render('views/index.html.twig', array('user' => 'Пользователь'));
     }
 }
