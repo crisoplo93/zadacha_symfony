@@ -38,6 +38,7 @@ class UserController extends AbstractController{
                 $notification = "";
                 $allowTypes = array('jpg','png','jpeg','JPG','JPEG','PNG');
                 $targetDir = "C:/xampp/htdocs/zadacha_symfony/src/user_pictures/";
+                $targetDirDB = "http://localhost/zadacha_symfony/src/user_pictures/";
 
                 $message = $_POST['message'];
                 $email = $_POST['email'];
@@ -111,11 +112,12 @@ class UserController extends AbstractController{
                         $fileName = basename($f["name"]);
                         $token = hash('sha256', $email);
                         $targetFilePath = $targetDir . $token."_".$fileName;
+                        $targetFilePathDB = $targetDirDB . $token."_".$fileName;
                 
                         if(move_uploaded_file($f["tmp_name"], $targetFilePath))
                         {
                             $image = new Image();
-                            $image->setDir($targetFilePath);
+                            $image->setDir($targetFilePathDB);
                             $image->setUserId($user_id);
 
                             $entityManager->persist($image);
